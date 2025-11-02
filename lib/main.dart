@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       home: BlocProvider(
   create: (context) => MovieCubit( 
     MovieRepo(
-      MovieService(
+      MovieServices(
         Dio(),
       ),
     ),

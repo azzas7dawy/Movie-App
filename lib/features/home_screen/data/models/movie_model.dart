@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'movie_model.g.dart';
+
+@JsonSerializable()
 class Movie {
     int page;
     List<Result> results;
@@ -11,8 +16,11 @@ class Movie {
         required this.totalResults,
     });
 
+    factory Movie.fromJson(Map<String, dynamic> json) => _$MovieFromJson(json);
+    Map<String, dynamic> toJson() => _$MovieToJson(this);
 }
 
+@JsonSerializable()
 class Result {
     String description;
     int favoriteCount;
@@ -34,6 +42,8 @@ class Result {
         required this.posterPath,
     });
 
+    factory Result.fromJson(Map<String, dynamic> json) => _$ResultFromJson(json);
+    Map<String, dynamic> toJson() => _$ResultToJson(this);
 }
 
 enum Iso6391 {

@@ -1,21 +1,21 @@
-// import 'package:json_annotation/json_annotation.dart';
-// // تأكد أن هذا الـ import صحيح
-// import 'movie_model.dart'; 
+import 'package:json_annotation/json_annotation.dart';
 
-// part 'movie_response.g.dart'; // 
+import 'movie_model.dart'; 
 
-// @JsonSerializable()
-// class MovieResponse {
-//   final int page;
-//   final List<Result> results;
+part 'movie_response.g.dart'; // 
 
-//   MovieResponse({
-//     required this.page,
-//     required this.results,
-//   });
+@JsonSerializable()
+class MovieResponse {
+  final int page;
+  final List<Result> results;
 
-//   factory MovieResponse.fromJson(Map<String, dynamic> json) =>
-//       _$MovieResponseFromJson(json);
+  MovieResponse({
+    required this.page,
+    required this.results,
+  });
 
-//   Map<String, dynamic> toJson() => _$MovieResponseToJson(this);
-// }
+  factory MovieResponse.fromJson(Map<String, dynamic> json) =>
+      _$MovieResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$MovieResponseToJson(this);
+}

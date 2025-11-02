@@ -37,10 +37,12 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^9.1.1
   google_maps_flutter: ^2.13.1
-  # json_serializable: ^6.11.1
+  json_serializable: ^6.11.1
   retrofit: ^4.8.0
 
 dev_dependencies:
+  retrofit_generator: ^10.0.6
+  json_serializable: ^6.11.1
   flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
