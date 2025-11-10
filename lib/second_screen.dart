@@ -28,6 +28,13 @@ class SecondScreen extends StatelessWidget {
               payload,
               style: TextStyle(fontSize: 16),
             ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+            Navigator.pushNamed(context, PushNotificationScreen.routeName);
+              },
+              child: Text('go to push notification screen'),
+            ),
           ],
         ),
       ),

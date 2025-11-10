@@ -75,6 +75,7 @@ class MyApp extends StatelessWidget {
           return SecondScreen(payload: args);
         },
         PushNotificationScreen.routeName: (context) => const PushNotificationScreen(),
+        
       },
       // (2) تعيين مفتاح الملاحة
 
