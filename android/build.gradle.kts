@@ -12,13 +12,17 @@ val newBuildDir: Directory =
 rootProject.layout.buildDirectory.value(newBuildDir)
 
 subprojects {
-    val newSubprojectBuildDir: Directory = newBuildDir.dir(project.name)
-    project.layout.buildDirectory.value(newSubprojectBuildDir)
-}
-subprojects {
+    // Only relocate build directories for projects that are inside the root project
+    // (skip external/plugin projects that live in the pub cache or other locations).
+    if (project.path == ":app") {
+        val newSubprojectBuildDir: Directory = newBuildDir.dir(project.name)
+        project.layout.buildDirectory.value(newSubprojectBuildDir)
+    }
+
     project.evaluationDependsOn(":app")
 }
 
-tasks.register<Delete>("clean") {
-    delete(rootProject.layout.buildDirectory)
-}
+// tasks.register<Delete>("clean") {
+//     delete(rootProject.layout.buildDirectory)
+// }
+

@@ -23,8 +23,10 @@ class _MovieListPageState extends State<MovieListPage> {
   @override
   void initState() {
     super.initState();
-    // Fetch movies when the widget is initialized
-    movies = context.read<MovieCubit>().fetchMovies() as List<Result>;
+  
+    movies = context.read<MovieCubit>().state is MovieSuccess
+        ? (context.read<MovieCubit>().state as MovieSuccess).movies
+        : [];
   }
 
   @override

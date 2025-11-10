@@ -25,13 +25,11 @@ class _MovieServices implements MovieServices {
   Future<Result> getMovies(
     String accountId,
     String apiKey,
-    String sessionId,
     String language,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'api_key': apiKey,
-      r'session_id': sessionId,
       r'language': language,
     };
     final _headers = <String, dynamic>{};

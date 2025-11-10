@@ -12,7 +12,7 @@ abstract class MovieServices {
   Future<Result> getMovies(
     @Path('account_id') String accountId,
     @Query('api_key') String apiKey,
-    @Query('session_id') String sessionId,
+    // @Query('session_id') String sessionId,
     @Query('language') String language,
   );
 }
