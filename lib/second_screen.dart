@@ -1,6 +1,8 @@
 // lib/second_screen.dart
 
 import 'package:flutter/material.dart';
+import 'package:maps_and_themeing/cloude_notification.dart';
+import 'package:maps_and_themeing/google_maps_screen.dart';
 
 class SecondScreen extends StatelessWidget {
   final String payload;
@@ -34,6 +36,13 @@ class SecondScreen extends StatelessWidget {
             Navigator.pushNamed(context, PushNotificationScreen.routeName);
               },
               child: Text('go to push notification screen'),
+            ),
+            Text("Or"),
+            ElevatedButton(
+              onPressed: () {
+            Navigator.pushNamed(context, MapScreen.routeName);
+              },
+              child: Text('go to map screen'),
             ),
           ],
         ),

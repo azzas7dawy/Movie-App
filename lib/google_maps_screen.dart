@@ -4,6 +4,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({super.key});
+  static const routeName = '/map_screen';
 
   @override
   State<MapScreen> createState() => _MapScreenState();
